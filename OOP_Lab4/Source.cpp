@@ -19,6 +19,7 @@ int main()
 	std::cout << "vectorC: " << vectorC;
 
 	vectorC = vectorA + vectorB;
+	std::cout << vectorA << vectorB;
 	double scalarProduct = vectorC * vectorB;
 
 	std::cout << "vectorC: " << vectorC << "vectorC length: " << 
