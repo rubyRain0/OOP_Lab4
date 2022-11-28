@@ -10,39 +10,45 @@ Triad::Triad(double _a, double _b, double _c)
 	a = _a; b = _b; c = _c;
 }
 
-Triad& Triad::operator+(Triad& objTriad) 
+Triad* Triad::operator+(Triad& objTriad) 
 {
-	a += objTriad.a;
-	b += objTriad.b;
-	c += objTriad.c;
-	return *this;
+	Triad* p = new Triad;
+	p->a = a + objTriad.a;
+	p->b = b + objTriad.b;
+	p->c = c + objTriad.c;
+	return p;
 }
 
-Triad& Triad::operator-(Triad& objTriad) 
+Triad* Triad::operator-(Triad& objTriad)
 {
-	a -= objTriad.a;
-	b -= objTriad.b;
-	c -= objTriad.c;
-	return *this;
+	Triad* p = new Triad;
+	p->a = a - objTriad.a;
+	p->b = b - objTriad.b;
+	p->c = c - objTriad.c;
+	return p;
 }
 
-Triad& Triad::operator*(Triad& objTriad)
+Triad* Triad::operator*(Triad& objTriad)
 {
-	a *= objTriad.a;
-	b *= objTriad.b;
-	c *= objTriad.c;
-	return *this;
+	Triad* p = new Triad;
+	p->a = a * objTriad.a;
+	p->b = b * objTriad.b;
+	p->c = c * objTriad.c;
+	return p;
 }
 
-Triad& Triad::operator/(Triad& objTriad)
+Triad* Triad::operator/(Triad& objTriad)
 {
 	if (objTriad.a == 0 || objTriad.b == 0 || objTriad.c == 0)
 		std::cout << "Division by zero error.\n";
 	else
-		a /= objTriad.a;
-		b /= objTriad.b;
-		c /= objTriad.c;
-	return *this;
+	{
+		Triad* p = new Triad;
+		p->a = a / objTriad.a;
+		p->b = b / objTriad.b;
+		p->c = c / objTriad.c;
+		return p;
+	}
 }
 
 Triad& Triad::operator+=(double number)
@@ -72,37 +78,51 @@ Triad& Triad::operator/=(double number)
 	return *this;
 }
 
-Triad& Triad::operator+(double number)
+Triad* Triad::operator+(double number)
 {
-	a += number; b += number; c += number;
-	return *this;
+	Triad* p = new Triad;
+	p->a = a + number;
+	p->b = b + number;
+	p->c = c + number;
+	return p;
 }
 
-Triad& Triad::operator*(double number)
+Triad* Triad::operator*(double number)
 {
-	a *= number; b *= number; c *= number;
-	return *this;
+	Triad* p = new Triad;
+	p->a = a * number;
+	p->b = b * number;
+	p->c = c * number;
+	return p;
 }
 
-Triad& Triad::operator-(double number)
+Triad* Triad::operator-(double number)
 {
-	a -= number; b -= number; c -= number;
-	return *this;
+	Triad* p = new Triad;
+	p->a = a - number;
+	p->b = b - number;
+	p->c = c - number;
+	return p;
 }
 
-Triad& Triad::operator/(double number)
+Triad* Triad::operator/(double number)
 {
 	if (number == 0)
 		std::cout << "Division by zero error.\n";
 	else
-		a /= number; b /= number; c /= number;
-	return *this;
+	{
+		Triad* p = new Triad;
+		p->a = a / number;
+		p->b = b / number;
+		p->c = c / number;
+		return p;
+	}
 }
 
-Triad& Triad::operator=(Triad& objTriad)
+Triad* Triad::operator=(Triad& objTriad)
 {
 	a = objTriad.a; b = objTriad.b; c = objTriad.c;
-	return *this;
+	return this;
 }
 
 bool Triad::operator==(Triad& objTriad)

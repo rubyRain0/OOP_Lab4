@@ -9,16 +9,12 @@ public:
 	vector3D();
 	vector3D(double _a, double _b, double _c);
 
-	vector3D operator+(const vector3D& objVector3D);
-	vector3D operator-(const vector3D& objVector3D);
-	vector3D& operator=(const vector3D& objVector3D);
 	double operator*(const vector3D& objVector3D); // Scalar product.
-	double operator*(const Triad& objVector3D);
-	double angleBetweenVectors(const Triad& objVector3D);
+	double angleBetweenVectors(const vector3D& objVector3D);
 
 	void setCoordinates(double _a, double _b, double _c);
 
-	double getLength(const Triad& objVector3D) const;
+	static double getLength(const Triad& objVector3D);
 	double getLength() const;
 
 	std::string toString() const;

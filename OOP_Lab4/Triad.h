@@ -11,20 +11,21 @@ public:
 	Triad();
 	Triad(double _a, double _b, double _c);
 
-	Triad& operator+(Triad& objTriad);
-	Triad& operator-(Triad& objTriad);
-	Triad& operator*(Triad& objTriad);
-	Triad& operator/(Triad& objTriad);
-	Triad& operator=(Triad& objTriad);
+	Triad* operator+(Triad& objTriad);
+	Triad* operator-(Triad& objTriad);
+	Triad* operator*(Triad& objTriad);
+	Triad* operator/(Triad& objTriad);
+	Triad* operator=(Triad& objTriad);
 
 	Triad& operator+=(double number);
 	Triad& operator*=(double number);
 	Triad& operator-=(double number);
 	Triad& operator/=(double number);
-	Triad& operator+(double number);
-	Triad& operator*(double number);
-	Triad& operator-(double number);
-	Triad& operator/(double number);
+
+	Triad* operator+(double number);
+	Triad* operator*(double number);
+	Triad* operator-(double number);
+	Triad* operator/(double number);
 
 	bool operator==(Triad& objTriad);
 	bool operator!=(Triad& objTriad);

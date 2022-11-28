@@ -18,8 +18,10 @@ int main()
 	vectorC.setCoordinates(1, 3, 1);
 	std::cout << "vectorC: " << vectorC;
 
-	vectorC = vectorA + vectorB;
-	std::cout << vectorA << vectorB;
+	Triad* p = vectorA + vectorB; // base class pointer to derivative class pointer casting.
+	vector3D* q = (vector3D*)p; // указатель на базовый класс приводится к указателю на производный. 
+	vectorC = *q; // 
+	std::cout << vectorC;
 	double scalarProduct = vectorC * vectorB;
 
 	std::cout << "vectorC: " << vectorC << "vectorC length: " << 
